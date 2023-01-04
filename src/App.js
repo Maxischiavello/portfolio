@@ -1,13 +1,13 @@
 import './App.css';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
+import Content from './components/Content';
+import { ThemeProvider } from '@mui/material/styles';
+import darkTheme from './theme';
 
 function App() {
   return (
-    <>
-      <Navbar/>
-      <Home/>
-    </>
+    <ThemeProvider theme={darkTheme}>
+      <Content/> 
+    </ThemeProvider>
   );
 }
 

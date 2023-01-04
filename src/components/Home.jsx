@@ -1,34 +1,30 @@
 import React from 'react'
 import Img from '../assets/foto.jpeg'
-import styled from 'styled-components'
-import Button from '@mui/material/Button';
+import { Button, Box, Grid, Typography } from '@mui/material';
+import { withStyles } from 'tss-react/mui';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function Home() {
+
     return (
-        <MainContainer>
-            <div>
-                <p><span>Hola!</span> Me presento:</p>
-                <h1>Maximiliano Schiavello</h1>
-                <p>Desarrollador web | Programador</p>
-                <Button variant="contained" endIcon={<LinkedInIcon />}>
-                    Conectemos
-                </Button>
-            </div>
-
-            <div className="image-container">
-                <img src={Img} alt="foto" width={300} />
-            </div>
-        </MainContainer>
-
+        <Grid container spacing={2}>
+            <Grid item xs={12} sm={12} md={6}>
+                <Box spacing={1}>
+                    <Typography><span>Hola!</span> Me presento:</Typography>
+                    <Typography variant='h3'>Maximiliano Schiavello</Typography>
+                    <Typography>Desarrollador web | Programador</Typography>
+                    <Button variant="outlined" endIcon={<LinkedInIcon />}>
+                        Conectemos
+                    </Button>
+                </Box>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+                <Box spacing={1}>
+                    <img src={Img} alt="foto" width={300} />
+                </Box>
+            </Grid>
+        </Grid>
     )
 }
 
 export default Home
-
-const MainContainer = styled.main`
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    padding: 50px;
-`
