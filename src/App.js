@@ -1,12 +1,17 @@
 import './App.css';
-import Content from './components/Content';
+import { Container } from '@mui/system';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 import { ThemeProvider } from '@mui/material/styles';
-import darkTheme from './theme';
+import theme from './theme';
 
 function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Content/> 
+    <ThemeProvider theme={theme}>
+      <Container fixed>
+        <Navbar />
+        <Home />
+      </Container>
     </ThemeProvider>
   );
 }

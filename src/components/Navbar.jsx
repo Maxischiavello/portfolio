@@ -26,7 +26,7 @@ function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} >
       <Typography variant="h6" sx={{ my: 2 }}>
         PORTAFOLIO
       </Typography>
@@ -46,10 +46,10 @@ function Navbar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }} >
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar component="nav" position='relative'>
+        <Toolbar >
           <IconButton
             color="inherit"
             aria-label="open drawer"
