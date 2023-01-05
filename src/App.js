@@ -6,8 +6,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import theme from './theme';
 import Footer from './components/Footer';
-import About from './components/About';
-import Skills from './components/Skills';
+import AboutContainer from './components/AboutContainer';
 
 function App() {
   return (
@@ -16,8 +15,7 @@ function App() {
       <Container maxWidth="lg">
         <Navbar />
         <Home />
-        <About />
-        <Skills />
+        <AboutContainer />
         <Footer />
       </Container>
     </ThemeProvider>

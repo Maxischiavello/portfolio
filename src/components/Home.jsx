@@ -6,7 +6,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function Home() {
 
     return (
-        <Box mt={12} >
+        <Box sx={{
+            py: 20
+        }} >
             <Grid container spacing={2} >
                 <Grid item xs={12} >
                     <Box spacing={1} sx={{

@@ -1,16 +1,14 @@
 import React from 'react'
 import { Paper, Typography } from '@mui/material'
+import Skills from './Skills'
 
 function About() {
   return (
     <Paper sx={{
-        margin: 10,
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: 'column'
     }}>
-        <Typography variant='h4' m={4} px={2} color='primary.main'>
+        <Typography variant='h4' my={4} px={2} color='primary.main'>
             Sobre mi
         </Typography>
         <Typography mb={4} px={2}>
@@ -24,6 +22,7 @@ function About() {
             Apacionado por el desarrollo.
             Busco, de manera constante, aprender nuevas tecnologías.
         </Typography>
+        <Skills />
     </Paper>
   )
 }

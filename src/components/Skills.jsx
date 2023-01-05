@@ -1,32 +1,18 @@
-import { Box, List, ListItem, ListItemText } from '@mui/material'
+import { Typography, Box } from '@mui/material'
 import React from 'react'
 
 function Skills() {
 
-    const skills = [
-        'POO', 
-        'BD Relacional', 
-        'html', 
-        'css', 
-        'javascript', 
-        'react', 
-        'node', 
-        'c#', 
-        'entityFramework', 
-        'sql']
-
     return (
         <Box>
-            <List>
-                <ListItem>
-                    {skills.map((skill) =>{
-                        return <ListItemText
-                        primary={skill}
-                    />
-                    })}
-                </ListItem>
-            </List>
-        </Box>
+            <Typography variant='h5' my={4} px={2} color='primary.main'>
+                Skills/Conocimientos
+            </Typography>
+            <Typography mb={4} px={2}>
+                Programación orientada a objetos, base de datos relacional y no relacional,
+                 html, css, javascript, react, node, sql, c#, ASP.net core, entityFramework.
+            </Typography>
+        </Box >
     )
 }
 
