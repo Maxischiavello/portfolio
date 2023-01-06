@@ -23,7 +23,7 @@ function Home() {
                         <Typography variant='h2' color='primary.main'>Maximiliano Schiavello</Typography>
                         <Typography mb={4}>Desarrollador web | Programador</Typography>
 
-                        <Link href={URLs.linkedinURL}>
+                        <Link href={URLs.linkedinURL} style={{ textDecoration: 'none'}}>
                             <Button sx={{
                                 bgcolor: 'primary.dark',
                                 '&:hover': { bgcolor: 'primary.main' }

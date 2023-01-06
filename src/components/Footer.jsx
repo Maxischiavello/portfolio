@@ -8,7 +8,7 @@ function Copyright() {
     return (
         <Typography variant="body2" color="primary.dark" align="center">
             {'Copyright © '}
-            <Link color="inherit" href={URLs.linkedinURL}>
+            <Link color="inherit" href={URLs.linkedinURL} style={{ textDecoration: 'none'}}>
                 Maximiliano Schiavello
             </Link>{' '}
             {new Date().getFullYear()}
