@@ -1,13 +1,13 @@
 import React from 'react'
-import { Button, Box, Grid, Typography } from '@mui/material';
+import { Button, Box, Grid, Typography, Link } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
+import URLs from '../utils';
 
 function Home() {
 
     return (
         <Box sx={{
-            py: 14,
+            py: 20,
             bgcolor: 'primary.light'
         }} >
             <Grid container spacing={2} >
@@ -23,13 +23,16 @@ function Home() {
                         <Typography variant='h2' color='primary.main'>Maximiliano Schiavello</Typography>
                         <Typography mb={4}>Desarrollador web | Programador</Typography>
 
-                        <Button sx={{
-                            bgcolor: 'primary.dark', 
-                            '&:hover': {bgcolor: 'primary.main'}}} 
-                            variant="contained" 
-                            endIcon={<LinkedInIcon/>}>
-                            Conectemos
-                        </Button>
+                        <Link href={URLs.linkedinURL}>
+                            <Button sx={{
+                                bgcolor: 'primary.dark',
+                                '&:hover': { bgcolor: 'primary.main' }
+                            }}
+                                variant="contained"
+                                endIcon={<LinkedInIcon />}>
+                                Conectemos
+                            </Button>
+                        </Link>
                     </Box>
                 </Grid>
             </Grid>

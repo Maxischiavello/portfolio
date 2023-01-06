@@ -7,7 +7,7 @@ function Copyright() {
     const linkedin = 'https://www.linkedin.com/in/maximiliano-schiavello/';
 
     return (
-        <Typography variant="body2" color="primary.light" align="center">
+        <Typography variant="body2" color="primary.dark" align="center">
             {'Copyright © '}
             <Link color="inherit" href={linkedin}>
                 Maximiliano Schiavello
@@ -20,7 +20,7 @@ function Copyright() {
 
 function Footer() {
     return (
-        <Box component="footer" sx={{ bgcolor: 'primary.dark', py: 4 }}>
+        <Box component="footer" sx={{ bgcolor: 'primary.light', py: 6 }}>
             <Container>
                 <Copyright />
             </Container>
