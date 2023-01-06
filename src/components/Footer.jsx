@@ -1,15 +1,14 @@
 import React from 'react'
 import { Box, Typography, Link } from '@mui/material';
 import { Container } from '@mui/system';
+import URLs from '../utils';
 
 function Copyright() {
-
-    const linkedin = 'https://www.linkedin.com/in/maximiliano-schiavello/';
 
     return (
         <Typography variant="body2" color="primary.dark" align="center">
             {'Copyright © '}
-            <Link color="inherit" href={linkedin}>
+            <Link color="inherit" href={URLs.linkedinURL}>
                 Maximiliano Schiavello
             </Link>{' '}
             {new Date().getFullYear()}
@@ -20,7 +19,7 @@ function Copyright() {
 
 function Footer() {
     return (
-        <Box component="footer" sx={{ bgcolor: 'primary.light', py: 6 }}>
+        <Box component="footer" sx={{ bgcolor: '#fff', py: 6 }}>
             <Container>
                 <Copyright />
             </Container>

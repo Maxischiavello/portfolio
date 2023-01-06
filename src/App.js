@@ -14,7 +14,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Container maxWidth={false} disableGutters>
+        <Container maxWidth={false} disableGutters >
           <Navbar />
           <Routes>
             <Route index element={<Home />} />

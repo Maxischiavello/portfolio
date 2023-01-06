@@ -7,8 +7,8 @@ function Home() {
 
     return (
         <Box sx={{
-            py: 20,
-            bgcolor: 'primary.light'
+            my: 20,
+            bgcolor: '#fff'
         }} >
             <Grid container spacing={2} >
                 <Grid item xs={12} >
