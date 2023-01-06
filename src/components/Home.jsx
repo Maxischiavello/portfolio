@@ -7,7 +7,8 @@ function Home() {
 
     return (
         <Box sx={{
-            py: 20
+            py: 14,
+            bgcolor: 'primary.light'
         }} >
             <Grid container spacing={2} >
                 <Grid item xs={12} >
@@ -18,11 +19,15 @@ function Home() {
                         alignItems: 'center',
                         textAlign: ' center',
                     }}>
-                        <Typography variant='h6' >Hola! Me presento:</Typography>
+                        <Typography >Hola! Me presento:</Typography>
                         <Typography variant='h2' color='primary.main'>Maximiliano Schiavello</Typography>
-                        <Typography variant='h6' mb={4}>Desarrollador web | Programador</Typography>
+                        <Typography mb={4}>Desarrollador web | Programador</Typography>
 
-                        <Button color='primary' variant="contained" endIcon={<LinkedInIcon/>}>
+                        <Button sx={{
+                            bgcolor: 'primary.dark', 
+                            '&:hover': {bgcolor: 'primary.main'}}} 
+                            variant="contained" 
+                            endIcon={<LinkedInIcon/>}>
                             Conectemos
                         </Button>
                     </Box>

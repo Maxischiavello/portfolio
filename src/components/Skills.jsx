@@ -5,8 +5,8 @@ function Skills() {
 
     return (
         <Box>
-            <Typography variant='h5' my={4} px={2} color='primary.main'>
-                Skills/Conocimientos
+            <Typography variant='h5' mb={1} mt={3} px={2} color='primary.dark'>
+                Skills
             </Typography>
             <Typography mb={4} px={2}>
                 Programación orientada a objetos, base de datos relacional y no relacional,

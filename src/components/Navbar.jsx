@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom'
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About'];
@@ -26,18 +27,18 @@ function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} >
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor: 'primary.light' }} >
       <Typography variant="h6" sx={{ my: 2 }}>
         PORTAFOLIO
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+            <ListItem  key={item} disablePadding>
+              <ListItemButton components={Link} to={item === 'Home' ? '/' : item} sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item} color='primary.dark'/>
+              </ListItemButton>
+            </ListItem>
         ))}
       </List>
     </Box>
@@ -48,7 +49,7 @@ function Navbar(props) {
   return (
     <Box sx={{ display: 'flex' }} >
       <CssBaseline />
-      <AppBar component="nav" position='relative'>
+      <AppBar component="nav" position='relative' sx={{bgcolor: 'primary.dark'}} >
         <Toolbar >
           <IconButton
             color="inherit"
@@ -63,19 +64,22 @@ function Navbar(props) {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            color='primary.light'
           >
             PORTAFOLIO
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+              <Link to={item === 'Home' ? '' : item}>
+                <Button key={item} sx={{ color: 'primary.light' }}>
+                  {item}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="nav">
+      <Box component="nav" >
         <Drawer
           container={container}
           variant="temporary"

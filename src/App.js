@@ -7,17 +7,22 @@ import { CssBaseline } from '@mui/material';
 import theme from './theme';
 import Footer from './components/Footer';
 import AboutContainer from './components/AboutContainer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Navbar />
-        <Home />
-        <AboutContainer />
-        <Footer />
-      </Container>
+      <Router>
+        <Container maxWidth={false} disableGutters>
+          <Navbar />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path='/about' element={<AboutContainer />} />
+          </Routes>
+          <Footer />
+        </Container>
+      </Router>
     </ThemeProvider>
   );
 }
