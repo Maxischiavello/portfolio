@@ -5,7 +5,7 @@ import About from './About';
 function AboutContainer() {
   return (
     <Box sx={{
-      my: 20,
+      my: { xs: 12 ,sm: 16, md: 20, lg: 24, xl: 28 },
       bgcolor: '#fff'
     }}>
         <Grid container spacing={2} sx={{
