@@ -1,13 +1,13 @@
-import './App.css';
-import { Container } from '@mui/system';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import { Container } from '@mui/system';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
-import theme from './theme';
-import Footer from './components/Footer';
-import AboutContainer from './components/AboutContainer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import theme from './theme'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route index element={<Home />} />
-            <Route path='/about' element={<AboutContainer />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/projects' element={<Projects />} />
           </Routes>
           <Footer />
         </Container>

@@ -1,103 +1,135 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom'
+import MenuItem from '@mui/material/MenuItem';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import { Link } from 'react-router-dom';
 
-const drawerWidth = 240;
-const navItems = ['Home', 'About'];
 
-function Navbar(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
+const pages = ['Home', 'About', 'Projects'];
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+function ResponsiveAppBar() {
+  const [anchorElNav, setAnchorElNav] = useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
   };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor: 'primary.light' }} >
-      <Typography variant="h6" sx={{ my: 2 }}>
-        PORTAFOLIO
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-            <ListItem  key={item} disablePadding>
-              <ListItemButton component={Link} to={item === 'Home' ? '/' : `/${item}`} sx={{ textAlign: 'center' }}>
-                <ListItemText primary={item} color='primary.dark'/>
-              </ListItemButton>
-            </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
   return (
-    <Box sx={{ display: 'flex' }} >
-      <CssBaseline />
-      <AppBar component="nav" position='relative' sx={{bgcolor: 'primary.dark'}} >
-        <Toolbar >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
+    <AppBar position="static" sx={{ backgroundColor: 'primary.dark'}}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <BusinessCenterIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            color='primary.light'
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
           >
             PORTAFOLIO
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Link to={item === 'Home' ? '/' : `/${item}`} style={{ textDecoration: 'none'}}>
-                <Button key={item} sx={{ color: 'primary.light' }}>
-                  {item}
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <Link
+                  to={page === 'Home' ? '/' : `/${page}`}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                  key={page}
+                >
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center" >{page}</Typography>
+                  </MenuItem>
+                </Link>
+              ))}
+            </Menu>
+          </Box>
+          <BusinessCenterIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            PORTAFOLIO
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Link
+                to={page === 'Home' ? '/' : `/${page}`}
+                style={{ textDecoration: 'none' }}
+                key={page}
+              >
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: '#fff', display: 'block' }}
+                >
+                  {page}
                 </Button>
               </Link>
             ))}
           </Box>
         </Toolbar>
-      </AppBar>
-      <Box component="nav" >
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-    </Box>
+      </Container>
+    </AppBar>
   );
 }
-
-export default Navbar;
+export default ResponsiveAppBar;

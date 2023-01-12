@@ -19,7 +19,7 @@ function Copyright() {
 
 function Footer() {
     return (
-        <Box component="footer" sx={{ bgcolor: '#fff', py: 6 }}>
+        <Box component="footer" sx={{ bgcolor: '#f1f0f2', py: 6 }}>
             <Container>
                 <Copyright />
             </Container>
