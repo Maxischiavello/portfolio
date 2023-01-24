@@ -12,8 +12,7 @@ function Home() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '100vh',
-            mt: 4
+            minHeight: '90vh',
         }}>
             <Box sx={{
                 textAlign: 'center',

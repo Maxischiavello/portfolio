@@ -7,7 +7,10 @@ import URLs from './projectsURLs'
 function Projects() {
     return (
         <Container sx={{
-            minHeight: '100vh',
+            minHeight: '90vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             mt: 4
         }}>
             <Box>
@@ -28,14 +31,16 @@ function Projects() {
                     </Grid>
                     <Grid item xs={8} sm={5} md={4} lg={3}>
                         <ProjectCard
-                            image={require('../assets/projectsImgages/soon.jpg')} urlToProject={URLs.dag.url}
-                            projectTitle={'proximamente'}
-                            projectDescription={'proximamente subiré proyectos en los que estoy trabajando'}
+                            image={require('../assets/projectsImgages/marketplace.png')}
+                            urlToProject={URLs.rickMarketplace.url}
+                            projectTitle={URLs.rickMarketplace.title}
+                            projectDescription={URLs.rickMarketplace.description}
                         />
                     </Grid>
                     <Grid item xs={8} sm={5} md={4} lg={3}>
                         <ProjectCard
-                            image={require('../assets/projectsImgages/soon.jpg')} urlToProject={URLs.dag.url}
+                            image={require('../assets/projectsImgages/soon.jpg')} 
+                            urlToProject={URLs.dag.url}
                             projectTitle={'proximamente'}
                             projectDescription={'proximamente subiré proyectos en los que estoy trabajando'}
                         />

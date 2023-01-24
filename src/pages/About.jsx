@@ -1,6 +1,5 @@
 import React from 'react'
-import { Container } from '@mui/material'
-import { Paper, Typography } from '@mui/material';
+import { Box, Container, Avatar, Paper, Typography } from '@mui/material'
 import Contact from '../components/Contact'
 
 function About() {
@@ -9,8 +8,7 @@ function About() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '100vh',
-            mt: 4
+            minHeight: '90vh',
         }}>
             <Paper sx={{
                 alignSelf: 'center',
@@ -18,9 +16,16 @@ function About() {
                 flexDirection: 'column',
                 maxWidth: 640,
             }}>
-                <Typography variant='h4' mb={3} mt={3} px={2} color='primary.dark'>
-                    SOBRE MI
-                </Typography>
+                <Box display='flex' alignItems='center'>
+                    <Typography variant='h4' mb={3} mt={3} px={2} color='primary.dark'>
+                        SOBRE MI
+                    </Typography>
+                    <Avatar
+                        alt="foto-perfil"
+                        src={require('../assets/avatar.jpeg')}
+                        sx={{ width: 48, height: 48 }}
+                    />
+                </Box>
                 <Typography mb={1} px={2}>
                     Me considero un persona responsable,
                     paciente y con un alto grado de empatía por los demás.
