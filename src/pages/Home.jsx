@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import URLs from '../utils';
+import links from '../utils';
 
 function Home() {
 
@@ -25,7 +25,12 @@ function Home() {
                     Maximiliano Schiavello
                 </Typography>
                 <Typography sx={{ typography: { xs: 'h6', sm: 'h6', md: 'h4' } }}>Desarrollador | Programador</Typography>
-                <Link color="inherit" href={URLs.linkedin} sx={{my: 6}}>
+                <Link 
+                    color="inherit" 
+                    href={links.linkedin} 
+                    sx={{my: 6}}
+                    style={{ textDecoration: 'none' }}
+                >
                     <Button
                     sx={{
                         backgroundColor: 'primary.dark'

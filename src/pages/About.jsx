@@ -7,7 +7,6 @@ function About() {
         <Container sx={{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
             minHeight: '90vh',
         }}>
             <Paper sx={{
@@ -26,18 +25,18 @@ function About() {
                         sx={{ width: 48, height: 48 }}
                     />
                 </Box>
-                <Typography mb={1} px={2}>
+                <Typography mb={2} px={2}>
                     Me considero un persona responsable,
                     paciente y con un alto grado de empatía por los demás.
                 </Typography>
-                <Typography mb={1} px={2}>
+                <Typography mb={2} px={2}>
                     Dinámico, proactivo y versátil para adaptarme a múltiples modelos de trabajo y necesidades.
                 </Typography>
-                <Typography mb={1} px={2}>
+                <Typography mb={2} px={2}>
                     Apacionado por el desarrollo.
                     Busco, de manera constante, aprender nuevas tecnologías.
                 </Typography>
-                <Typography mb={1} px={2}>
+                <Typography mb={2} px={2}>
                     Actualmente estoy por terminar la carrera de analista de sistemas
                     donde he estudiado programacion orientada a objetos,
                     base de datos relacional, desarrollo web y mobile,

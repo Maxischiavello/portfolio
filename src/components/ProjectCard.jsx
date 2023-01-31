@@ -6,7 +6,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function ProjectCard({ image, urlToProject, projectTitle, projectDescription }) {
+export default function ProjectCard({ 
+  image,
+  urlToProject,
+  projectTitle,
+  projectDescription,
+  codeSource
+}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -22,9 +28,16 @@ export default function ProjectCard({ image, urlToProject, projectTitle, project
         </Typography>
       </CardContent>
       <CardActions>
-      <Link color="inherit" href={urlToProject} >
-        <Button size="small">ver proyecto</Button>
-      </Link>  
+      {urlToProject !== '' ? 
+          <Link color="inherit" href={urlToProject} style={{ textDecoration: 'none' }} >
+            <Button size="small">ver proyecto</Button>
+          </Link> : ''
+      }
+      {codeSource !== '' ? 
+          <Link color="inherit" href={codeSource} style={{ textDecoration: 'none' }} >
+            <Button size="small">repositorio</Button>
+          </Link> : ''
+      } 
       </CardActions>
     </Card>
   );

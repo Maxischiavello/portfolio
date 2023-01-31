@@ -2,7 +2,7 @@ import React from 'react'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import { Box, Link, Button } from '@mui/material'
-import URLs from '../utils'
+import links from '../utils'
 
 function Contact() {
 
@@ -11,7 +11,7 @@ function Contact() {
             display: 'flex',
             gap: 2
         }}>
-            <Link color="inherit" href={URLs.linkedin} sx={{my: 1}}>
+            <Link color="inherit" href={links.linkedin} sx={{my: 1}}>
                     <Button
                     sx={{
                         backgroundColor: 'primary.dark'
@@ -21,7 +21,7 @@ function Contact() {
                     </Button>
             </Link>
 
-            <Link color="inherit" href={URLs.github} sx={{my: 1}}>
+            <Link color="inherit" href={links.github} sx={{my: 1}}>
                     <Button
                     sx={{
                         backgroundColor: 'primary.dark'
